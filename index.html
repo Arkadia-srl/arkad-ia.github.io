@@ -442,7 +442,7 @@ let usingGyro = false;
 let isDragging = false;
 let prevPt = { x: 0, y: 0 };
 let theta = 0.3, phi = 1.3;
-const R = 5;
+let R = 5;
 
 // Gyro
 let gyroAlpha = 0, gyroBeta = 90, gyroGamma = 0;
@@ -530,6 +530,7 @@ async function placePlanet(p) {
   }
 
   currentPlanet = p;
+  R = Math.max(4, p.size * 3.5); // camera distance scales with planet size
   gyroBase = null; // reset gyro reference for this planet
 
   document.getElementById('planet-big-name').textContent = p.name.toUpperCase();
