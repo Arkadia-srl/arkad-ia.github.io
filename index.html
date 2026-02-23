@@ -530,7 +530,8 @@ async function placePlanet(p) {
   }
 
   currentPlanet = p;
-  R = Math.max(3, p.size * 3.5) * (p.hasRings ? 1.8 : 1);
+  //R = Math.max(3, p.size * 3.5) * (p.hasRings ? 1.8 : 1);
+  R = Math.max(3, p.size * 5) * (p.hasRings ? 1.8 : 1);
   gyroBase = null; // reset gyro reference for this planet
 
   document.getElementById('planet-big-name').textContent = p.name.toUpperCase();
